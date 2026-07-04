@@ -25,13 +25,33 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Determine artifact path
+        id: artifact
+        run: |
+          if [ -d ./build ]; then echo "artifact_path=build" >> $GITHUB_OUTPUT
+          elif [ -d ./dist ]; then echo "artifact_path=dist" >> $GITHUB_OUTPUT
+          elif [ -d ./public ]; then echo "artifact_path=public" >> $GITHUB_OUTPUT
+          else echo "artifact_path=." >> $GITHUB_OUTPUT
+        shell: bash
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: ${{ steps.artifact.outputs.artifact_path }}
 
       - name: Deploy to GitHub Pages
         id: deployment
