@@ -47,43 +47,13 @@
       align-items: center;
       justify-content: center;
       padding: 24px;
-      background-color: #0f1028;
-      background-image:
-        radial-gradient(circle at 20% 20%, rgba(255, 0, 0, 0.35) 0 2px, transparent 2px),
-        radial-gradient(circle at 80% 30%, rgba(255, 0, 0, 0.25) 0 2px, transparent 2px),
-        radial-gradient(circle at 30% 80%, rgba(255, 0, 0, 0.2) 0 2px, transparent 2px),
-        linear-gradient(135deg, rgba(255,255,255,0.06) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.06) 50%, rgba(255,255,255,0.06) 75%, transparent 75%, transparent),
-        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
-        linear-gradient(rgba(16, 21, 133, 0.75), rgba(16, 21, 133, 0.75));
-      background-size: auto, auto, auto, 24px 24px, 24px 24px, auto;
+      background:
+        linear-gradient(rgba(16, 21, 133, 0.65), rgba(16, 21, 133, 0.65)),
+        url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       color: #fff;
       text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .image-banner::before {
-      content: "31415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679  𝛻  ∂  ∫  ∆  ∇  π  31415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679";
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Courier New', monospace;
-      font-size: 0.95rem;
-      letter-spacing: 0.16em;
-      color: rgba(255, 0, 0, 0.85);
-      opacity: 0.95;
-      text-shadow: 0 0 10px rgba(255, 0, 0, 0.25);
-      transform: rotate(-4deg) scale(1.02);
-      padding: 24px;
-      line-height: 2.1;
-      white-space: pre-wrap;
-      text-align: center;
-      word-break: break-word;
     }
     .image-banner h2 {
-      position: relative;
-      z-index: 1;
       margin: 0;
       font-size: 2rem;
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
